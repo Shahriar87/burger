@@ -1,5 +1,6 @@
-# Burger
-[Check the app](https://shahs-friend-finder-app.herokuapp.com/)
+# Eat-Da Burger
+![alt text](public/assets/images/cover.png)
+[Check the app](https://shah-burger-app.herokuapp.com/)
 
 ## Technologies Used: 
   
