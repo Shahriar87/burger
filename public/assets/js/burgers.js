@@ -1,5 +1,8 @@
 //ADDING LOGIC TO INDEX PAGE
+
 $(function () {
+
+    //DEVOUR BUTTON FUNCTINALITY
     $(".devour").on("click", function (event) {
         var id = $(this).data("id");
         var newStatus = $(this).data("status");
@@ -14,13 +17,14 @@ $(function () {
             data: burgerStatus
         }).then(
             function () {
-                console.log("Burger was", newStatus);
+                // console.log("Burger was", newStatus);
                 //RELOAD PAGE
                 location.reload();
             }
         );
     });
 
+    //ADD BURGER BUTTON FUNCTINALITY
     $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
@@ -28,7 +32,7 @@ $(function () {
             burger_name: $("#bu").val().trim(),
         };
 
-        console.log(newBurger.burger_name);
+        // console.log(newBurger.burger_name);
 
         //SENDING POST REQUEST
 
@@ -45,5 +49,19 @@ $(function () {
             );
         }
 
+    });
+
+    $("#restart").on("click", function (event) {
+
+        //SENDING PUT REQUEST
+        $.ajax("/api/burgers", {
+            type: "PUT"
+        }).then(
+            function () {
+                // console.log("Burger was", newStatus);
+                //RELOAD PAGE
+                location.reload();
+            }
+        );
     });
 });

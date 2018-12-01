@@ -19,6 +19,11 @@ var burger = {
         orm.updateOne(bool, id, function(res){
             cb(res);
         })
+    },
+    updateAll: function(cb) {
+        orm.updateAll(function(res){
+            cb(res);
+        })
     }
 };
 

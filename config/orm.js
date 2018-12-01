@@ -6,7 +6,7 @@ var orm = {
         var queryString = "SELECT * FROM burgers";
         connection.query(queryString, function (err, result) {
             if (err) throw err;
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
     },
@@ -14,7 +14,7 @@ var orm = {
         var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
         connection.query(queryString, [column1], function (err, result) {
             if (err) throw err;
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
     },
@@ -22,7 +22,15 @@ var orm = {
         var queryString = "UPDATE burgers SET devoured = ? WHERE id = ?";
         connection.query(queryString, [bool, id], function (err, result) {
             if (err) throw err;
-            console.log(result);
+            // console.log(result);
+            cb(result);
+        });
+    },
+    updateAll: function (cb) {
+        var queryString = "UPDATE burgers SET devoured = 0";
+        connection.query(queryString, function (err, result) {
+            if (err) throw err;
+            // console.log(result);
             cb(result);
         });
     }
