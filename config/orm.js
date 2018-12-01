@@ -10,9 +10,9 @@ var orm = {
             cb(result);
         });
     },
-    insertOne: function (column1, column2, cb) {
-        var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, ?)";
-        connection.query(queryString, [column1, column2], function (err, result) {
+    insertOne: function (column1, cb) {
+        var queryString = "INSERT INTO burgers (burger_name) VALUES (?)";
+        connection.query(queryString, [column1], function (err, result) {
             if (err) throw err;
             console.log(result);
             cb(result);

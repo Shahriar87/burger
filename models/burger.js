@@ -1,6 +1,7 @@
 //IMPORTING ORM
 var orm = require("../config/orm.js");
 
+//CREATING BURGER MODEL OBJECT
 var burger = {
     selectAll: function (cb) {
         orm.selectAll(function (res) {
@@ -8,8 +9,8 @@ var burger = {
         });
     },
 
-    insertOne: function(column1, column2, cb) {
-        orm.insertOne(column1, column2, function(res){
+    insertOne: function(column1, cb) {
+        orm.insertOne(column1, function(res){
             cb(res);
         })
     },
